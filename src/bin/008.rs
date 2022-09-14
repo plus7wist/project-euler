@@ -38,10 +38,8 @@ fn main() {
             }
         }
 
-        if i >= len - 1 {
-            if zero == 0 {
-                max_product = max_product.max(product);
-            }
+        if i >= len - 1 && zero == 0 {
+            max_product = max_product.max(product);
         }
     }
 
