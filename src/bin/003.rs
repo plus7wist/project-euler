@@ -8,7 +8,7 @@ fn main() {
     let mut n = 600851475143_u64;
     let mut maxfact = 0;
 
-    for i in 2..n {
+    for i in 2.. {
         if n % i == 0 {
             maxfact = maxfact.max(i);
         }
