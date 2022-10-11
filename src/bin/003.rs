@@ -5,26 +5,26 @@
 //! 求 600851475143 的最大质因数。
 
 fn main() {
-    let mut n = 600851475143_u64;
-    let mut maxfact = 0;
+	let mut n = 600851475143_u64;
+	let mut maxfact = 0;
 
-    for i in 2.. {
-        if n % i == 0 {
-            maxfact = maxfact.max(i);
-        }
+	for i in 2.. {
+		if n % i == 0 {
+			maxfact = maxfact.max(i);
+		}
 
-        while n % i == 0 {
-            n /= i;
-        }
+		while n % i == 0 {
+			n /= i;
+		}
 
-        if n / i <= i {
-            break;
-        }
-    }
+		if n / i <= i {
+			break;
+		}
+	}
 
-    if n > 1 {
-        maxfact = maxfact.max(n);
-    }
+	if n > 1 {
+		maxfact = maxfact.max(n);
+	}
 
-    dbg!(maxfact);
+	dbg!(maxfact);
 }

@@ -9,44 +9,44 @@
 //! 考虑不超过四百万的斐波那契数，计算其中偶数斐波那契数的和。
 
 fn main() {
-    let maxfib = 400_0000;
+	let maxfib = 400_0000;
 
-    println!(
-        "{}",
-        FibIter::new()
-            .take_while(|f| *f <= maxfib)
-            .filter(|f| f % 2 == 0)
-            .sum::<u64>()
-    );
+	println!(
+		"{}",
+		FibIter::new()
+			.take_while(|f| *f <= maxfib)
+			.filter(|f| f % 2 == 0)
+			.sum::<u64>()
+	);
 }
 
 struct FibIter {
-    a: u64,
-    b: u64,
-    n: u64,
+	a: u64,
+	b: u64,
+	n: u64,
 }
 
 impl FibIter {
-    fn new() -> Self {
-        Self { a: 1, b: 2, n: 1 }
-    }
+	fn new() -> Self {
+		Self { a: 1, b: 2, n: 1 }
+	}
 }
 
 impl Iterator for FibIter {
-    type Item = u64;
+	type Item = u64;
 
-    fn next(&mut self) -> Option<u64> {
-        let v;
+	fn next(&mut self) -> Option<u64> {
+		let v;
 
-        if self.n <= 2 {
-            v = self.n
-        } else {
-            v = self.a + self.b;
-            self.a = self.b;
-            self.b = v;
-        }
-        self.n += 1;
+		if self.n <= 2 {
+			v = self.n
+		} else {
+			v = self.a + self.b;
+			self.a = self.b;
+			self.b = v;
+		}
+		self.n += 1;
 
-        Some(v)
-    }
+		Some(v)
+	}
 }

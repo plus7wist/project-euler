@@ -6,8 +6,8 @@
 //! Find the sum of all the multiples of 3 or 5 below 1000.
 
 fn main() {
-    println!(
-        "{}",
-        (0..1000).filter(|n| n % 3 == 0 || n % 5 == 0).sum::<u64>()
-    );
+	println!(
+		"{}",
+		(0..1000).filter(|n| n % 3 == 0 || n % 5 == 0).sum::<u64>()
+	);
 }

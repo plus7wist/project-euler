@@ -6,27 +6,27 @@
 //! What is the 10001-st prime number?
 
 fn main() {
-    let mut listing = vec![2];
-    let maxn = 10001;
+	let mut listing = vec![2];
+	let maxn = 10001;
 
-    for i in 3.. {
-        let mut is_prime = true;
-        for p in &listing {
-            if i % p == 0 {
-                is_prime = false;
-                break;
-            }
-        }
+	for i in 3.. {
+		let mut is_prime = true;
+		for p in &listing {
+			if i % p == 0 {
+				is_prime = false;
+				break;
+			}
+		}
 
-        if is_prime {
-            listing.push(i);
+		if is_prime {
+			listing.push(i);
 
-            if listing.len() >= maxn {
-                break;
-            }
-        }
-    }
+			if listing.len() >= maxn {
+				break;
+			}
+		}
+	}
 
-    dbg!(&listing[..10]);
-    dbg!(listing[maxn - 1]);
+	dbg!(&listing[..10]);
+	dbg!(listing[maxn - 1]);
 }
